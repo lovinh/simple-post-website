@@ -10,7 +10,7 @@
         <li><a href="#" class="nav-link px-2 text-white">Categories</a></li>
         <li><a href="#" class="nav-link px-2 text-white">Latest posts</a></li>
         <li><a href="#" class="nav-link px-2 text-white">Hot posts</a></li>
-        <li><a href="#" class="nav-link px-2 text-white">New post</a></li>
+        <li><a href="./new_post.php" class="nav-link px-2 text-white">New post</a></li>
       </ul>
 
       <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">

@@ -4,10 +4,10 @@
       <a href="#" class="nav-link px-2 text-muted">Home</a>
     </li>
     <li class="nav-item">
-      <a href="#" class="nav-link px-2 text-muted">Features</a>
+      <a href="#" class="nav-link px-2 text-muted">Categories</a>
     </li>
     <li class="nav-item">
-      <a href="#" class="nav-link px-2 text-muted">Pricing</a>
+      <a href="#" class="nav-link px-2 text-muted">Latest posts</a>
     </li>
     <li class="nav-item">
       <a href="#" class="nav-link px-2 text-muted">FAQs</a>

@@ -43,7 +43,7 @@ function logout()
 function login_required()
 {
     if (!$_SESSION["user_id"]) {
-        header("Location: ./index.php");
+        header("Location: ./login.php");
     }
 }
 function check_for_remembered_user()
