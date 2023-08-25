@@ -42,9 +42,12 @@ function logout()
 
 function login_required()
 {
+    // echo "LOGIN REQUIRED CHECK";
     if (!$_SESSION["user_id"]) {
         header("Location: ./login.php");
+        return true;
     }
+    return false;
 }
 function check_for_remembered_user()
 {

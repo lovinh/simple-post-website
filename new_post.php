@@ -3,8 +3,9 @@ session_start();
 error_reporting(E_ERROR | E_PARSE);
 include "auth.php";
 check_for_remembered_user();
+login_required();
 include "post.php";
-echo create_post();
+create_post();
 ?>
 
 <!DOCTYPE html>

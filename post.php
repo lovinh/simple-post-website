@@ -99,3 +99,30 @@ function create_post()
         }
     }
 }
+function vote_score($post_id, $type)
+{
+    if (!login_required()) {
+        echo "SOMETHING";
+        return;
+    }
+    include "database.php";
+    $sql = "SELECT scores FROM posts WHERE id = '" . $post_id . "'";
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_assoc($result);
+    $score = $row["scores"];
+    if ($type) {
+        $score = $score + 1;
+    } else {
+        $score = $score - 1;
+    }
+    $sql = "UPDATE posts SET scores='" . $score . "' WHERE id = '" . $post_id . "'";
+    $result = mysqli_query($conn, $sql);
+    mysqli_close($conn);
+    if (!$result) {
+        return "VOTE_FAIL";
+    } else {
+        $url = "Location: ./view-post.php?id=" . $post_id;
+        // header($url);
+        echo $_SESSION["user_id"];
+    }
+}

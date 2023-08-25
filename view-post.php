@@ -72,7 +72,7 @@ $_POST["userCommentInput"] = "";
                 <h2 style="margin-top: 20px;"><i class="fas fa-comment-alt"></i> Comments</h2>
                 <div class="blog-detail-comment-container">
                     <div class="blog-detail-comment-scores">
-                        <div><button type="button" id="btn-vote-up"><i class="fas fa-sort-up"></i></button></div>
+                        <div><button type="button" id="btn-vote-up" onclick="btnVoteUpClick()"><i class="fas fa-sort-up"></i></button></div>
                         <div class="blog-detail-comment-scores-num text-center">
                             <?php
                             if ($post_detail["scores"] > 0) {
@@ -81,7 +81,7 @@ $_POST["userCommentInput"] = "";
                             echo $post_detail["scores"];
                             ?>
                         </div>
-                        <div><button type="button"id="btn-vote-down"><i class="fas fa-sort-down" style="size: 30px;"></i></button></div>
+                        <div><button type="button" id="btn-vote-down" onclick="btnVoteDownClick()"><i class="fas fa-sort-down" style="size: 30px;"></i></button></div>
                     </div>
 
                     <div class=" blog-detail-comment-content">
@@ -112,6 +112,16 @@ $_POST["userCommentInput"] = "";
     include "footer.php";
     ?>
     <script src="assets/js/header.js"></script>
+    <script src="assets/js/view-post.js"></script>
+    <script>
+        function btnVoteUpClick() {
+            location.href = "./vote-up.php?post_id=<?php echo $_GET["id"] ?>";
+        }
+
+        function btnVoteDownClick() {
+            location.href = "./vote-down.php?post_id=<?php echo $_GET["id"] ?>";
+        }
+    </script>
 </body>
 
 </html>
