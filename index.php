@@ -33,7 +33,11 @@ include "post.php";
                 echo '<h1 class="m-5 text-center">No post exist!</h1>';
             } else {
                 foreach ($posts as $post) {
-                    echo '<div class="card"><div class="card-body p-5"><h5 class="card-title">' . $post["title"] . '</h5><h6 class="card-subtitle mb-2 text-muted">' . $post["created"] . '</h6><a href="./view-post.php?id=' . $post["id"] . '" class="card-link">Read post</a></div></div>';
+                    $render = '<div class="card post-item"><div class="card-body p-5"><h5 class="card-title">' . $post["title"] . '</h5><h6 class="card-subtitle mb-2 text-muted">' . $post["created"] . '</h6><div><a href="./view-post.php?id=' . $post["id"] . '" class="card-link">Read post</a></div></div></div>';
+                    if ($post["author_id"] == $_SESSION["user_id"]) {
+                        $render = '<div class="card post-item"><div class="card-body p-5"><h5 class="card-title">' . $post["title"] . '</h5><h6 class="card-subtitle mb-2 text-muted">' . $post["created"] . '</h6><div><a href="./view-post.php?id=' . $post["id"] . '" class="card-link">Read post</a><a href="./edit-post.php?id=' . $post["id"] . '" class="card-link">Edit post</a></div></div></div>';
+                    }
+                    echo $render;
                 }
             }
             ?>

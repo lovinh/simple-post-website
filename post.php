@@ -99,6 +99,7 @@ function create_post()
         }
     }
 }
+
 function vote_score($post_id, $type)
 {
     if (!login_required()) {
@@ -124,5 +125,36 @@ function vote_score($post_id, $type)
         $url = "Location: ./view-post.php?id=" . $post_id;
         // header($url);
         echo $_SESSION["user_id"];
+    }
+}
+
+function update_post($post_id)
+{
+    include "database.php";
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $sql = "UPDATE posts SET title='" . $_POST["post-title"] . "',body='" . $_POST["post-body"] . "',category=' " . $_POST["post-category"] . "' WHERE id='" . $post_id . "'";
+        $result = mysqli_query($conn, $sql);
+        mysqli_close($conn);
+        if (!$result) {
+            return "UPDATE_POST_FAIL";
+        } else {
+            $location = "Location: ./index.php";
+            header($location);
+        }
+    }
+}
+
+function delete_post($post_id)
+{
+    include "database.php";
+    $sql = "DELETE FROM `posts` WHERE id = '" . $post_id . "'";
+    $result = mysqli_query($conn, $sql);
+    mysqli_close($conn);
+    if (!$result) {
+        return "DELETE_POST_FAIL";
+    } else {
+        $location = "Location: ./index.php";
+        echo "<script>alert('Delete post completed!')</script>";
+        header($location);
     }
 }

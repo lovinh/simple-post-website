@@ -28,9 +28,9 @@ include "post.php";
     <main>
         <div class="blog">
             <h1 class="text-center">
-                404 Not Found!
+                403 Forbiden!
             </h1>
-            <p class="text-center">Your content was removed or doesn't exist!</p>
+            <p class="text-center">You cannot access this content</p>
         </div>
     </main>
     <?php
