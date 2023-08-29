@@ -27,9 +27,10 @@ include "post.php";
     ?>
 
     <main>
+        <h1 class="text-center m-3">Latest posts:</h1>
         <div class="blog">
             <?php
-            $posts = load_post();
+            $posts = load_post_sort_by("created", true);
             $len = count($posts);
             $n_items = 5;
             if (!$posts) {
@@ -59,17 +60,17 @@ include "post.php";
             $pagination = '<nav aria-label="Page navigation">
                 <ul class="pagination justify-content-center">
                     <li class="page-item">
-                        <a class="page-link" href="./index.php?page=' . ($_GET["page"] - 1 >= 1 ? $_GET["page"] - 1 : 1) . '" aria-label="Previous">
+                        <a class="page-link" href="./latest-post.php?page=' . ($_GET["page"] - 1 >= 1 ? $_GET["page"] - 1 : 1) . '" aria-label="Previous">
                             <span aria-hidden="true">&laquo;</span>
                             <span class="sr-only">Previous</span>
                         </a>
                     </li>';
             for ($i = 1; $i <= intdiv($len, $n_items) + 1; $i += 1) {
-                $pagination = $pagination . '<li class="page-item"><a class="page-link" href="./index.php?page=' . $i . '">' . $i . '</a></li>';
+                $pagination = $pagination . '<li class="page-item"><a class="page-link" href="./latest-post.php?page=' . $i . '">' . $i . '</a></li>';
             }
 
             $pagination = $pagination . '<li class="page-item">
-                        <a class="page-link" href="./index.php?page=' . ($_GET["page"] + 1 <= intdiv($len, $n_items) + 1 ? $_GET["page"] + 1 : intdiv($len, $n_items) + 1) . '" aria-label="Next">
+                        <a class="page-link" href="./latest-post.php?page=' . ($_GET["page"] + 1 <= intdiv($len, $n_items) + 1 ? $_GET["page"] + 1 : intdiv($len, $n_items) + 1) . '" aria-label="Next">
                             <span aria-hidden="true">&raquo;</span>
                             <span class="sr-only">Next</span>
                         </a>    
