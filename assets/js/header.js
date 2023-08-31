@@ -7,3 +7,6 @@ function btnLogoutClick() {
 function btnSignupClick() {
   location.href = "./register.php";
 }
+function btnUserClick() {
+  location.href = "./user.php";
+}

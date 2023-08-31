@@ -50,6 +50,23 @@ function load_post_by_category($category)
 
     return $rows;
 }
+function load_post_by_user_id($user_id)
+{
+    include "database.php";
+
+    $sql = "SELECT * FROM posts WHERE author_id = '" . $user_id . "';";
+
+    $result = mysqli_query($conn, $sql);
+
+    if (mysqli_num_rows($result) < 0) {
+        return null;
+    }
+    $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+    mysqli_close($conn);
+
+    return $rows;
+}
 function load_post_detail($post_id)
 {
     include "database.php";

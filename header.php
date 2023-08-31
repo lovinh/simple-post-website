@@ -20,7 +20,7 @@
       <div class="text-end">
         <?php
         if (!empty($_SESSION["user_id"] && !empty($_SESSION["user_username"]))) {
-          echo '<button type="button" class="btn btn-outline-light me-2" id="btn-user">' . $_SESSION["user_username"] . '</button>
+          echo '<button type="button" class="btn btn-outline-light me-2" id="btn-user" onclick="btnUserClick()">' . $_SESSION["user_username"] . '</button>
         <button type="button" class="btn btn-warning" id="btn-logout" onclick="btnLogoutClick()">Logout</button>';
         } else {
           echo '<button type="button" class="btn btn-outline-light me-2" id="btn-login" onclick="btnLoginClick()">Login</button>
