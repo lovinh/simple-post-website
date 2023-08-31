@@ -7,7 +7,7 @@
 
       <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
         <li><a href="./" class="nav-link px-2 text-secondary">Home</a></li>
-        <li><a href="#" class="nav-link px-2 text-white">Categories</a></li>
+        <li><a href="./category.php" class="nav-link px-2 text-white">Categories</a></li>
         <li><a href="./latest-post.php" class="nav-link px-2 text-white">Latest posts</a></li>
         <li><a href="./hot-post.php" class="nav-link px-2 text-white">Hot posts</a></li>
         <li><a href="./new_post.php" class="nav-link px-2 text-white">New post</a></li>
